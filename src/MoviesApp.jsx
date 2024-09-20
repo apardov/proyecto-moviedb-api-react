@@ -26,11 +26,13 @@ export const MoviesApp = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		fetchMovieData();
+		setMovie('');
 	}
 
 	const handleChange = (e) => {
 		setMovie(e.target.value);
 		setError('');
+
 	}
 
 	return (
@@ -54,7 +56,6 @@ export const MoviesApp = () => {
 							<p><img src={ratingImg} alt={"Rating"}/> {movie.vote_average}</p>
 							<h4>Release Date</h4>
 							<p><img src={releaseImg} alt={""}/>{movie.release_date}</p>
-
 						</div>
 					))}
 				</div>
