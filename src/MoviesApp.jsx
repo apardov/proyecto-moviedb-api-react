@@ -17,6 +17,8 @@ export const MoviesApp = () => {
 			if (!movies) return setError("Debe ingresar una pelicula a buscar..")
 			const response = await fetch(`${urlBase}?query=${movies}&api_key=${API_KEY}&language=es-ES`);
 			const data = await response.json();
+			console.log(data.results)
+			if (!data.results || data.results.length === 0) return setError("No existe la pelicula ingresada");
 			setMovieData(data.results);
 		} catch (error) {
 			console.error("Ha ocurrido un error:", error)
