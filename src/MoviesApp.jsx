@@ -1,5 +1,7 @@
 import {useState} from "react";
-import './MoviesApp.css'
+import './MoviesApp.css';
+import ratingImg from './assets/rating.png';
+import releaseImg from './assets/release.png';
 
 export const MoviesApp = () => {
 
@@ -49,9 +51,9 @@ export const MoviesApp = () => {
 							<img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
 							<h2>{movie.title}</h2>
 							<h4>Rating</h4>
-							<p><img src={"../src/assets/rating.png"} alt={"Rating"}/> {movie.vote_average}</p>
+							<p><img src={ratingImg} alt={"Rating"}/> {movie.vote_average}</p>
 							<h4>Release Date</h4>
-							<p><img src={"../src/assets/release.png"} alt={""}/>{movie.release_date}</p>
+							<p><img src={releaseImg} alt={""}/>{movie.release_date}</p>
 
 						</div>
 					))}
