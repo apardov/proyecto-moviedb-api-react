@@ -14,7 +14,7 @@ export const MoviesApp = () => {
 
 	const fetchMovieData = async () => {
 		try {
-			if (!movies) return setError("Debe ingresar una pelicula a buscar..")
+			if (!movies.trim() || movies.length === 0) return setError("Debe ingresar una pelicula a buscar..")
 			const response = await fetch(`${urlBase}?query=${movies}&api_key=${API_KEY}&language=es-ES`);
 			const data = await response.json();
 			console.log(data.results)
